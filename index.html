@@ -1,63 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Энергичный Landing Page</title>
+<style>
+  /* --- Базовые стили --- */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  button { cursor: pointer; }
+
+  /* --- Градиентный фон --- */
+  body {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #fff;
+  }
+
+  /* --- Header --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+  }
+  .logo { font-size: 28px; font-weight: bold; }
+  .cta-btn {
+    background-color: #fff;
+    color: #ff416c;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #fff;
+  }
+
+  /* --- Hero-блок --- */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* --- Карточки --- */
+  .section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+  .card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    flex: 1 1 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  }
+
+  /* --- Форма --- */
+  .form-container {
+    background: rgba(255,255,255,0.1);
+    padding: 40px 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+  .form-container button {
+    width: 100%;
+    padding: 14px;
+    background-color: #fff;
+    color: #ff416c;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  .form-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #fff;
+  }
+
+  /* --- Footer --- */
+  footer {
+    background: rgba(0,0,0,0.2);
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+  }
+
+  /* --- Анимации --- */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+  @keyframes slideIn {
+    0% { opacity:0; transform: translateX(-50px);}
+    100% { opacity:1; transform: translateX(0);}
+  }
+
+  /* --- Адаптив --- */
+  @media(max-width:768px){
+    .hero h1{ font-size: 36px; }
+    .hero p{ font-size: 16px; }
+    .cards{ flex-direction: column; }
+  }
+
+</style>
 </head>
 <body>
-    
-<div class="container">
-    <div class="container-content">
-        <h1>Негматова Рухсора</h1>
-        <h2>веб-разработчик</h2>
-        <p>Привет! я занимаюсь вертской 
-            сайтов по макету.
-           Пишите для сотрудничества.
-        </p>
-        <a target="_blan" href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjvzcPDqNT_AhVMQJEFHVifCeUYABAAGgJscg&ohost=www.google.com&cid=CAASJORomPyX5UknfYMiSeKAbdb22anq0JqCW-7YIg5CYM0VJNqOrA&sig=AOD64_3o_nfxBe5-Kt1lj7DgFpn7fO4eww&q&adurl&ved=2ahUKEwiDnL7DqNT_AhUP6CoKHUtEDrYQ0Qx6BAgEEAE">
-            <img src="./img/inst.png" alt="" class="logo">
-        </a> 
 
-        <a target="_blank">
-            <img src="./img/wb.png" alt="" class="logo">
-        </a>
+<!-- Header -->
+<header>
+  <div class="logo">Лого</div>
+  <button class="cta-btn">Оставить заявку</button>
+</header>
 
-        <a target="_blank" href="https://web.telegram.org/">
-            <img src="./img/tg.png" alt=""class="logo">
-        </a>
+<!-- Hero -->
+<section class="hero">
+  <h1>Взрывное предложение для вашего бизнеса</h1>
+  <p>Мы создаем решения, которые реально работают! Попробуйте прямо сейчас и почувствуйте разницу.</p>
+  <button class="cta-btn">Попробовать</button>
+</section>
 
-        <br>
-<a target="_blank">
-    <button class="button">
-        НАПИСАТЬ
-    </button>
-</a>
-    </div>
-<div>
-    <div class="container-img">
-          <img src="./img/img.jpg" alt="">
-        </div>
-</div>
+<!-- Преимущества -->
+<section class="section">
+  <div class="section-title">Преимущества</div>
+  <div class="cards">
+    <div class="card">Быстрое внедрение</div>
+    <div class="card">Эффективные решения</div>
+    <div class="card">Поддержка 24/7</div>
+  </div>
+</section>
 
+<!-- Выгоды -->
+<section class="section">
+  <div class="section-title">Выгоды для клиента</div>
+  <div class="cards">
+    <div class="card">Увеличение прибыли</div>
+    <div class="card">Экономия времени</div>
+    <div class="card">Гибкие решения</div>
+    <div class="card">Рост доверия клиентов</div>
+  </div>
+</section>
 
+<!-- Форма -->
+<section class="section">
+  <div class="form-container">
+    <h2 style="text-align:center; margin-bottom:20px;">Оставьте заявку</h2>
+    <form id="leadForm">
+      <input type="text" placeholder="Имя" required>
+      <input type="tel" placeholder="Телефон" required>
+      <input type="email" placeholder="E-mail" required>
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+</section>
 
+<!-- Отзывы -->
+<section class="section">
+  <div class="section-title">Отзывы клиентов</div>
+  <div class="cards">
+    <div class="card">“Отличная работа, быстро и качественно!”</div>
+    <div class="card">“Рекомендую всем, супер сервис!”</div>
+    <div class="card">“Реально помогло увеличить продажи.”</div>
+  </div>
+</section>
 
+<!-- FAQ -->
+<section class="section">
+  <div class="section-title">Вопрос–Ответ</div>
+  <div class="cards">
+    <div class="card">Вопрос 1: Как начать?<br>Ответ: Просто оставьте заявку.</div>
+    <div class="card">Вопрос 2: Сроки работы?<br>Ответ: От 1 до 2 недель.</div>
+    <div class="card">Вопрос 3: Поддержка?<br>Ответ: 24/7 онлайн.</div>
+  </div>
+</section>
 
+<!-- Footer -->
+<footer>
+  Контакты: +7 999 999-99-99 | email@example.com<br>
+  Соцсети: <a href="#">VK</a> | <a href="#">Telegram</a><br>
+  © 2025 Все права защищены
+</footer>
 
+<script>
+  // Простейшая форма (alert пока вместо интеграции CRM)
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Заявка отправлена! CRM подключается отдельно.');
+    this.reset();
+  });
 
+  // Анимация появления карточек при скролле
+  const cards = document.querySelectorAll('.card');
+  const appearOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = 'fadeIn 0.6s forwards';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+  cards.forEach(card => { appearOnScroll.observe(card); });
+</script>
 
-
-
-
-    
 </body>
 </html>
-
-
-
-
 
 
 
